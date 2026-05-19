@@ -1,0 +1,49 @@
+# ── Python ─────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── Jupyter ────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── R ──────────────────────────────────────────────
+.Rhistory
+.RData
+.Rproj.user/
+*.Rcheck/
+*.tar.gz
+METT/build/
+
+# ── IDE / OS ───────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Project-local ──────────────────────────────────
+/tmp/
+*.log
+bench_results.json
+bench_extras.json

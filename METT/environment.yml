@@ -1,0 +1,50 @@
+# METT R → PyTorch porting environment.
+#
+# Setup (단일 명령):
+#   conda env create -f environment.yml
+#   conda activate mett
+#
+# Run scripts:
+#   conda run -n mett --no-capture-output python python/validation.py
+#
+# Run notebook:
+#   conda run -n mett --no-capture-output jupyter nbconvert \
+#       --to notebook --execute --inplace --ExecutePreprocessor.timeout=1800 \
+#       python/01_validation.ipynb
+#
+# - r-base=4.5.*: rpy2 3.6 wheel이 R 4.5 ABI 기준.
+# - rpy2/torch/lifelines만 pip (conda-forge 버전이 요건/CUDA 버전을 못 맞춤).
+# - 반드시 `conda run` 또는 `conda activate` 사용. 직접 `envs/mett/bin/python` 호출은
+#   PATH/LD_LIBRARY_PATH 누락으로 rpy2/R segfault.
+# - liblzma-devel: rpy2-rinterface 휠 빌드 시 `-llzma` 링크 필요
+#   (conda-forge `liblzma`는 unversioned 심볼릭 링크 미제공).
+#
+# 트러블슈팅 — `~/.local/lib/python3.X/site-packages`에 다른 패키지가 깔린 머신이면
+# pip이 transitive 의존성을 "이미 있음"으로 잘못 판단해 누락할 수 있습니다
+# (예: `_cffi_backend`, `libcudart.so.13` not found). 이런 경우:
+#   PYTHONNOUSERSITE=1 conda env create -f environment.yml
+
+name: mett
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+
+  # R 런타임
+  - r-base=4.5
+  - r-survival
+  - liblzma-devel
+
+  # 기본 수치
+  - numpy
+
+  # 노트북 실행 도구
+  - nbconvert>=7.16
+  - ipykernel>=6.29
+
+  - pip:
+      - rpy2==3.6.7
+      - torch>=2.12
+      - lifelines>=0.30
+      - nbformat>=5.10

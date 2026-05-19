@@ -1,0 +1,12 @@
+Package: METT
+Type: R Package
+Title: Median Event Time Test
+Version: 2.0
+Date: 2021-07-04
+Author: Yeonhee Park
+Maintainer: Yeonhee Park <ypark56@wisc.edu>
+Description: This is a R package to implement optimal two-stage design of signle arm Phase II clinical trials based on median event time test.
+Suggests: survival
+License: GPL-2
+NeedsCompilation: no
+Packaged: 2022-01-06 07:54:26 UTC; ypark56
