@@ -17,8 +17,8 @@ Park & Chen 2023, PLOS ONE) 의 최적 설계 탐색을 가속합니다.
 ## Quickstart
 
 ```bash
-git clone https://github.com/myshin22/mett2pytorch.git
-cd mett2pytorch
+git clone https://github.com/myshin22/METT2Pytorch.git
+cd METT2Pytorch
 
 # conda env 구성
 conda env create -f environment.yml
