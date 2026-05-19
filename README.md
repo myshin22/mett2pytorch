@@ -18,7 +18,6 @@ Park & Chen 2023, PLOS ONE) 의 최적 설계 탐색을 가속합니다.
 
 ```bash
 git clone https://github.com/myshin22/METT2Pytorch.git
-cd REPO
 
 # conda env 구성
 conda env create -f METT/environment.yml
