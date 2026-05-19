@@ -1,4 +1,4 @@
-# METT — R → PyTorch 
+# METT R → PyTorch 
 R 패키지 [`METT`](https://sites.google.com/view/yeonheepark/research) (Park 2021; Park & Chen 2023,
 원본은 Yeonhee Park 교수님 사이트에서 Google Drive로 배포)의 핵심 `METT2E`
 (exponential survival) 함수를 PyTorch로 변환합니다.
